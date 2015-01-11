@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../lib/css/bootstrap.css" >
+    <style>
+        body {
+            padding: 20px;
+        }
+        [class*="col-"] {
+            border: 1px solid;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: rgba(86,61,124,.15);
+        }
+    </style>
+</head>
+<body>
+
+1. 普通模式, 在电脑上每行3列，但是在手机上却是3行。 因为col-md只针对电脑，宽度比他笑的类型的设备不会生效
+<div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+</div>
+
+2. 混合模式, 在电脑上显示2列，在手机上显示也是2列，但是这两列只占2/3
+<div class="row">
+    <div class="col-md-6 col-xs-4">.col-md-6 .col-xs-4</div>
+    <div class="col-md-6 col-xs-4">.col-md-6 .col-xs-4</div>
+</div>
+
+
+3. 嵌套, 嵌套内部也是以12为总和进行计算的
+<div class="row">
+    <div class="col-md-6">
+        .col-md-6
+        <div class="row">
+            <div class="col-md-6">.col-md-6</div>
+            <div class="col-md-6">.col-md-6</div>
+        </div>
+    </div>
+    <div class="col-md-6">.col-md-6</div>
+</div>
+
+
+4. margin相关的设置， 第一行站5/12，第二列也是占5/12，但是第二列还有个样式 ，margin-left: 16.6666667%，这个样式也就是col-md-offset-2
+<br/>
+offset是margin-left样式, push是left样式, pull是right样式
+<div class="row">
+    <div class="col-md-5">.col-md-5</div>
+    <div class="col-md-5 col-md-offset-2">.col-md-5 .col-md-offset-2</div>
+</div>
+
+5. 第一列占了6/12，剩下还有6/12，第二列有样式margin-left：2/12； 所以第一列与第二列间隔了2/12，第二列的最终位置是9/12-10/12
+<div class="row">
+    <div class="col-md-6">.col-md-6</div>
+    <div class="col-md-2 col-md-push-2">.col-md-2 .col-md-push-2</div>
+</div>
+
+6. 第一列占了6/12，由于col-md-使用相对布局，因此left样式生效，因此第二列距离第一列间隔了20个像素，由于相对布局的元素会占领原先的地盘，因此第三列和第二列会相交20个像素
+<div class="row">
+    <div class="col-md-6">.col-md-6</div>
+    <div class="col-md-2" style="left: 20px;">.col-md-2 style: 20px;</div>
+    <div class="col-md-2">.col-md-2</div>
+</div>
+
+7. 第一列占6/12，第二列的col-md-pull-4表示style  right:4/12。 因此会在原先的位置上距往左移框父容器的4/12，然后自己占了2/12,因此跟第一列相交了1/3。第三列占最后的4/12。
+<div class="row">
+    <div class="col-md-6">.col-md-6</div>
+    <div class="col-md-2 col-md-pull-4">.col-md-2 .col-md-pull-4</div>
+    <div class="col-md-4">.col-md-4</div>
+</div>
+
+8. 第一列占了6/12，第二列占了2/12，由于第二列有了right: 20px的样式，会在原来的位置上向左移20个像素，因此跟第一列相交了20个像素。
+<div class="row">
+    <div class="col-md-6">.col-md-6</div>
+    <div class="col-md-2" style="right: 20px;">.col-md-2</div>
+</div>
+
+</body>
+</html>
