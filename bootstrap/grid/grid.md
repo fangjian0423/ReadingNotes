@@ -1,9 +1,3 @@
-title: bootstrap学习系列之表格布局
-date: 2015-01-11 00:07:24
-tags: [bootstrap]
-description: 介绍一下bootstrap的grid表格相关的知识
-----------------
-
 bootstrap框架不用多说了，本文来讲讲bootstrap中的grid相关的知识。
 
 grid，也就是表格，可以用来展示一些表单的数据。
