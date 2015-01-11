@@ -15,6 +15,7 @@ bootstrap中的导航条navbar记录。
 6. active
     作用在li上，表示这个li被激活，高亮显示
     
+一个实例：
     
     <div class="container">
         <nav class="navbar navbar-default">
